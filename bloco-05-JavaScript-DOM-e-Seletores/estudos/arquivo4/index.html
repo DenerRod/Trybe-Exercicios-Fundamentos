@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+
+    ////BUSCANDO ELEMENTOS////
+    //exercicio 01
+
+    let acessoElementoOndeVoceEsta = document.getElementById("elementoOndeVoceEsta");
+    
+
+    //exercico 02
+
+    acessoElementoOndeVoceEsta.parentElement.style.color = "green";
+
+    //exercicio 03
+
+    let primeiroFilhoDoFilho = document.getElementById("primeiroFilhoDoFilho");
+
+    primeiroFilhoDoFilho.innerText = "Texto para o primeiroFilhoDoFilho";
+
+    //exercicio 04
+
+    let filho = document.getElementById("pai").firstElementChild;
+
+    //exercicio 05
+
+    let primeiroFilho = document.getElementById("elementoOndeVoceEsta").previousElementSibling;
+
+    //exercico 06
+
+    let textoAtencao = document.getElementById("elementoOndeVoceEsta").nextSibling;
+
+    //exercico 07
+
+    let terceiroFilho = document.getElementById("elementoOndeVoceEsta").nextElementSibling;
+
+    //exercico 08
+
+    let terceiroFilho2 = document.getElementById("pai").lastElementChild.previousElementSibling;
+
+    ////CRIANDO ELEMENTOS////
+
+    //exercicio 01
+
+    let pai = document.getElementById("pai");
+
+    let irmao = document.createElement("section");
+    irmao.id = "irmaoElementoOndeVoceEsta";
+
+    pai.appendChild(irmao);
+
+    //exercicio 02
+
+    let elementoOndeVoceEsta1 = document.getElementById("elementoOndeVoceEsta");
+
+    let filho1 = document.createElement("section");
+    filho1.id = "filhoElementoOndeVoceEsta";
+
+    elementoOndeVoceEsta1.appendChild(filho1);
+
+    //exercico 03
+
+    let primeiroFilhoDoFilho1 = document.getElementById("primeiroFilhoDoFilho");
+
+    let filho2 = document.createElement("section");
+    filho2.id = "filhoPrimeiroFilhoDoFilho";
+
+    primeiroFilhoDoFilho1.appendChild(filho2);
+
+    //exercicio 04
+
+    let terceiroFilho1 = filho2.parentElement.parentElement.nextElementSibling;
+
+    ////REMOVENDO ELEMENTOS////
+
+    //exercicio 01
+
+    let pai01 = document.getElementById("pai");
+
+    let paiDoPai1 = document.getElementById("pai").firstElementChild;
+
+    
+    pai01.removeChild(paiDoPai1);
+  
+  </script>
+</body>
+</html>
+

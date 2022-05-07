@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+        section {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // COLOQUE SEU CÓDIGO AQUI
+
+        //exercicio 01
+
+        let filhoH1 = document.createElement("h1");
+
+        filhoH1.innerText = "Exercício 5.2 - JavaScript DOM";
+
+        document.body.appendChild(filhoH1);
+
+        //exercicio 02 
+
+        let main = document.createElement("main");
+
+        main.className = "main-content";
+
+        main.innerText = "Texto do passo 2";
+
+        document.body.appendChild(main);
+
+        //exercico 03
+
+        let section = document.createElement("section");
+
+        section.className = "center-content";
+
+        section.innerText = "Texto do passo 3";
+
+        main.appendChild(section);
+
+
+        //exercicio 04
+
+        let paragrafo = document.createElement("p");
+
+        paragrafo.innerText = "Texto do passo 4";
+
+        section.appendChild(paragrafo);
+
+        //exercicio 05
+
+        let tagSection = document.createElement("section");
+
+        tagSection.className = "left-content";
+
+        tagSection.innerText = "Texto do passo 5";
+
+        main.appendChild(tagSection);
+
+        //exercicio 06
+
+        let tagSection2 = document.createElement("section");
+
+        tagSection2.className = "right-content";
+
+        tagSection2.innerText = "Texto do passo 6";
+
+        main.appendChild(tagSection2);
+
+        //exercicio 07
+
+        let imagem = document.createElement("img");
+
+        imagem.className = "small-image";
+
+        imagem.src = "https://picsum.photos/200";
+
+        tagSection.appendChild(imagem);
+
+        //exercicio 08
+
+        let listaNaoOrdenadaUl = document.createElement("ul");
+
+        tagSection2.appendChild(listaNaoOrdenadaUl);
+
+        let arrayNumeros = ["Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez"];
+
+        for (num in arrayNumeros) {
+            let listaLi = document.createElement("li");
+
+            listaLi.innerHTML = arrayNumeros[num];
+
+            listaNaoOrdenadaUl.appendChild(listaLi);
+
+        }
+
+        //exercicio 09
+
+        for (let index = 0; index < 3; index++) {
+            let h3 = document.createElement("h3");
+
+            h3.innerHTML = "teste" + index;
+
+            main.appendChild(h3);
+
+        }
+
+        //ALTERAÇÕES E REMOÇÕES
+
+        //exercicio 1
+
+        let classTitle = document.querySelector("h1");
+
+        classTitle.className = "title";
+
+        //exercicio 2
+
+        let classH3 = document.getElementsByTagName("h3");
+
+        for (index = 0; index < classH3.length; index += 1) {
+            let classDescription = classH3[index];
+
+            classDescription.className = "description";
+        }
+
+        //exercicio 3
+
+    
+        let rmSection = document.getElementsByClassName("left-content")[0];
+
+        main.removeChild(rmSection);
+
+        //exercicio 4
+
+        let section6 = document.getElementsByClassName("right-content")[0];
+
+        section6.style.marginRight = "auto";
+
+        //exercicio 5
+
+        let paiSection3 = document.querySelector(".center-content").parentElement;
+
+        paiSection3.style.backgroundColor = "green";
+
+        //exercicio
+
+        listaNaoOrdenadaUl.lastChild.remove();
+        listaNaoOrdenadaUl.lastChild.remove();
+
+    </script>
+</body>
+
+</html>

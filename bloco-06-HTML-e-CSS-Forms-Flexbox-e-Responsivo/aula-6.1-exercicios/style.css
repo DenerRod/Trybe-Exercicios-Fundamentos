@@ -1,0 +1,46 @@
+#cabecalho {
+    display: flex;
+    align-items:stretch;
+    justify-content: space-between;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: xx-large;
+    
+}
+
+i {
+    margin: 30px 40px;
+}
+
+#link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    margin: 30px 40px;
+}
+
+.formulario {
+    border: 3px black solid;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.acordos {
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+ #enviar, #limpar {
+    padding: 10px;
+    background-color: white;
+    border: 5px lightgreen solid;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+}
+
